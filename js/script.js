@@ -24,10 +24,18 @@ if(parola == parolaInversa){
   Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
   Infine, dichiariamo chi ha vinto.*/
 
-var scelta =  prompt('inserisci qua la tua scelta, se PARI o DISPARI');
+var scelta =  prompt('inserisci qua la tua scelta, se PARI o DISPARI').toLowerCase();
+while( scelta !== 'pari' && scelta !== 'dispari'){
+  alert('Attenzione! Devi inserire pari o dispari');
+  var scelta =  prompt('inserisci qua la tua scelta, se PARI o DISPARI').toLowerCase();
+}
 console.log(scelta);
 
 var numeroUtente = parseInt(prompt('inserisci qua la tua scelta, tra 1 e 5'));
+while (isNaN(numeroUtente) || numeroUtente < 1 || numeroUtente > 5) {
+  alert('Attenzione! devi inserire un numero da 1 a 5')
+  var numeroUtente = parseInt(prompt('inserisci qua la tua scelta, tra 1 e 5'));
+}
 console.log(numeroUtente);
 
 function getRandomNumber(min, max) {
